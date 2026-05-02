@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Actividades</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body onload="cargarActividades()">
+    <div class="container">
+        <header>
+            <h1>📋 Consultar Actividades</h1>
+            <p>Listado de todas las actividades registradas</p>
+        </header>
+
+        <nav class="navbar">
+            <a href="index.html" class="nav-home">🏠 Inicio</a>
+            <a href="registrar.html" class="nav-registrar">➕ Registrar</a>
+            <a href="consultar.html" class="nav-consultar">📋 Consultar</a>
+        </nav>
+
+        <main>
+            <h2>Actividades Registradas</h2>
+            <button onclick="cargarActividades()" class="btn btn-info" style="margin-bottom:15px;">🔄 Actualizar</button>
+            <div id="mensaje-vacio" class="mensaje mensaje-info" style="display:none;">No hay actividades. ¡Crea una!</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Título</th><th>Tipo</th>
+                            <th>Inicio</th><th>Fin</th>
+                            <th>Quehacer</th><th>Tutor</th><th>Hijo</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                        <tr><td colspan="9" style="text-align:center;">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer><p>&copy; 2026 - Sistema de Gestión de Quehaceres Domésticos</p></footer>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

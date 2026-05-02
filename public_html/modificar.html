@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Actividad</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body onload="cargarDatosModificacion()">
+    <div class="container">
+        <header>
+            <h1>✏️ Modificar Actividad</h1>
+            <p>Actualice los datos de la actividad seleccionada</p>
+        </header>
+
+        <nav class="navbar">
+            <a href="index.html" class="nav-home">🏠 Inicio</a>
+            <a href="registrar.html" class="nav-registrar">➕ Registrar</a>
+            <a href="consultar.html" class="nav-consultar">📋 Consultar</a>
+        </nav>
+
+        <main>
+            <h2>Formulario de Modificación</h2>
+            <p style="color:#e74c3c; margin-bottom:15px; font-size:0.9em;">* Campos obligatorios</p>
+            <div id="mensaje" class="mensaje" style="display:none;"></div>
+            <div class="form-card">
+                <form id="form-modificar" onsubmit="modificarActividad(event)">
+                    <input type="hidden" id="id">
+                    <div class="form-group">
+                        <label for="titulo">Título <span style="color:#e74c3c;">*</span></label>
+                        <input type="text" id="titulo" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción <span style="color:#e74c3c;">*</span></label>
+                        <textarea id="descripcion" rows="3" required maxlength="500"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fechaInicio">Fecha de Inicio <span style="color:#e74c3c;">*</span></label>
+                            <input type="date" id="fechaInicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaTerminacion">Fecha de Terminación <span style="color:#e74c3c;">*</span></label>
+                            <input type="date" id="fechaTerminacion" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoActividad">Tipo de Actividad <span style="color:#e74c3c;">*</span></label>
+                        <select id="tipoActividad" required>
+                            <option value="Fisica">Física</option>
+                            <option value="Acompanamiento">Acompañamiento</option>
+                            <option value="Supervision">Supervisión</option>
+                            <option value="Creativa">Creativa</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="idQuehacer"># Quehacer <span style="color:#e74c3c;">*</span></label>
+                            <input type="number" id="idQuehacer" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="idTutor"># Tutor <span style="color:#e74c3c;">*</span></label>
+                            <input type="number" id="idTutor" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="idHijo"># Hijo <span style="color:#e74c3c;">*</span></label>
+                            <input type="number" id="idHijo" required min="1">
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-warning">💾 Guardar Cambios</button>
+                        <a href="consultar.html" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer><p>&copy; 2026 - Sistema de Gestión de Quehaceres Domésticos</p></footer>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
