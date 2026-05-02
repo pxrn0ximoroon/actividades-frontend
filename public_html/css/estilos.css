@@ -177,6 +177,10 @@ main h2{
     margin-top:25px;
     flex-wrap:wrap
 }
+.card .icon svg {
+    width: 80px;
+    height: 80px;
+}
 .btn{
     padding:12px 28px;
     border:none;
