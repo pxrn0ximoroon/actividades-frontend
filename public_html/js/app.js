@@ -145,7 +145,10 @@ async function eliminarActividad() {
     if (res.ok || res.status === 204) {
         localStorage.removeItem('actEliminar');
         document.getElementById('confirm-box').innerHTML = `<h3>✅ Eliminado</h3><p>"${a.titulo}" eliminada.</p><a href="consultar.html" class="btn btn-primary">Volver</a>`;
-    } else {
-        alert('Error al eliminar');
-    }
+  } else {
+    document.getElementById('confirm-box').innerHTML = `
+        <p class="mensaje mensaje-error">❌ Error al eliminar la actividad.</p>
+        <a href="consultar.html" class="btn btn-primary">Volver</a>
+    `;
+}
 }
